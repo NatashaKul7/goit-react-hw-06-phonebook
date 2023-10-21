@@ -5,7 +5,7 @@ export const Contacts = ({ contacts, handleDelete }) => {
     <ContactsBox>
       {contacts.map(({ id, name, number }) => {
         return (
-          <li key={id}>
+          <li key={id}> 
             <span>{name}:</span>
             <span>{number}</span>
             <button type="button" onClick={() => handleDelete(name)}>
