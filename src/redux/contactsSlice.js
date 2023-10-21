@@ -19,7 +19,7 @@ const contactsSlice = createSlice({
     deleteContact(state, action) {
       //   const idToRemove = parseInt(action.payload);
       state.contacts = state.contacts.filter(
-        contact => contact.id !== action.payload.id
+        contact => contact.id !== action.payload
       );
     },
 

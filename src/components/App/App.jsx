@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact, deleteContact, filterContact } from 'redux/contactsSlice';
+import { addContact, filterContact } from 'redux/contactsSlice';
 
 import { Container } from './App.styled';
 import { Form } from 'components/Form/Form';
@@ -28,13 +28,13 @@ export function App() {
     dispatch(addContact(newState))
   };
 
-  const handleDelete = id => {
-    // setContacts(prevContacts => {
-    //   return prevContacts.filter(contact => contact.name !== contactName);
-    // });
+  // const handleDelete = id => {
+  //   // setContacts(prevContacts => {
+  //   //   return prevContacts.filter(contact => contact.name !== contactName);
+  //   // });
 
-    dispatch(deleteContact(id))
-  };
+  //   dispatch(deleteContact(id))
+  // };
 
 
   const handleFilterChange = e => {
@@ -58,7 +58,7 @@ export function App() {
       ) : (
         <>
           <Filter onChange={handleFilterChange} filter={filter} />
-          <Contacts contacts={filterContacts()} handleDelete={handleDelete} />
+          <Contacts contacts={filterContacts()} />
         </>
       )}
     </Container>
